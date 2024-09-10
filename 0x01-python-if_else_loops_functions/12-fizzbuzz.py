@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-# Function to print numbers from 1 to 100 with Fizz, Buzz, and FizzBuzz substitutions
 
 def fizzbuzz():
     for i in range(1, 101):
