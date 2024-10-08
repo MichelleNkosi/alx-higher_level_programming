@@ -1,0 +1,27 @@
+============================
+Test cases for text_indentation
+============================
+
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+>>> text_indentation("Hello. My name is Michelle.")
+Hello.
+
+My name is Michelle.
+
+>>> text_indentation("Where am i? Earth? Are you sure?")
+Where am i?
+
+Earth?
+
+Are you sure?
+
+>>> text_indentation("Let's try something: new things happen.")
+Let's try something:
+
+new things happen.
+
+>>> text_indentation(12345)
+Traceback (most recent call last):
+    ...
+TypeError: text must be a string
