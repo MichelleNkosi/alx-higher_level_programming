@@ -1,0 +1,37 @@
+===========================
+Test cases for add_integer
+===========================
+
+>>> add_integer = __import__('0-add_integer').add_integer
+
+Add two positive integers:
+>>> add_integer(1, 2)
+3
+
+Add a positive and negative integer:
+>>> add_integer(100, -2)
+98
+
+Add with only one argument (default value for b is 98):
+>>> add_integer(2)
+100
+
+Add a float and an integer (floats are cast to integers):
+>>> add_integer(100.3, -2)
+98
+
+Invalid addition with a string, should raise TypeError:
+>>> add_integer(4, "School")
+Traceback (most recent call last):
+    ...
+TypeError: b must be an integer
+
+Invalid addition with None, should raise TypeError:
+>>> add_integer(None)
+Traceback (most recent call last):
+    ...
+TypeError: a must be an integer
+
+Add two floats (both should be cast to integers):
+>>> add_integer(5.5, 4.8)
+9
