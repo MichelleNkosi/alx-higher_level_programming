@@ -1,0 +1,12 @@
+>>> from 1_my_list import MyList   # Ensure correct import
+>>> my_list = MyList()             # Create an instance of MyList
+>>> my_list.append(3)              # Append values
+>>> my_list.append(1)
+>>> my_list.append(4)
+>>> my_list.append(2)
+>>> print(my_list)                 # Print the list (unsorted)
+[3, 1, 4, 2]
+>>> my_list.print_sorted()         # Print sorted list
+[1, 2, 3, 4]
+>>> print(my_list)                 # Verify original list is unchanged
+[3, 1, 4, 2]
