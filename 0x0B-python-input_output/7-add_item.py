@@ -12,8 +12,10 @@ try:
 except FileNotFoundError:
     items = []
 
-# Add all arguments to the list (skip the script name itself)
-items.extend(sys.argv[1:])
+# Check if any arguments are provided
+if len(sys.argv) > 1:
+    # Add all arguments (except the script name) to the list
+    items.extend(sys.argv[1:])
 
 # Save the updated list back to the file
 save_to_json_file(items, filename)
