@@ -1,60 +1,33 @@
 #!/usr/bin/python3
-"""
-Rectangle module
-"""
+
 from models.base import Base
 
 class Rectangle(Base):
-    """
-    Rectangle class that inherits from Base
-    """
-
     def __init__(self, width, height, x=0, y=0, id=None):
-        """
-        Initialize a new Rectangle instance.
-        Args:
-            width (int): The width of the rectangle.
-            height (int): The height of the rectangle.
-            x (int): The x-coordinate of the rectangle.
-            y (int): The y-coordinate of the rectangle.
-            id (int, optional): The id of the rectangle. Defaults to None.
-        """
-        super().__init__(id)  # Call the Base class constructor to manage id
+        super().__init__(id)
         self.width = width
         self.height = height
         self.x = x
         self.y = y
 
-    # Getters
-    @property
-    def width(self):
-        return self.__width
+    def to_dictionary(self):
+        """Returns the dictionary representation of a Rectangle."""
+        return {
+            'id': self.id,
+            'width': self.width,
+            'height': self.height,
+            'x': self.x,
+            'y': self.y
+        }
 
-    @property
-    def height(self):
-        return self.__height
+    def update(self, *args, **kwargs):
+        """Updates the Rectangle attributes."""
+        if args:
+            attributes = ['id', 'width', 'height', 'x', 'y']
+            for i, value in enumerate(args):
+                if i < len(attributes):
+                    setattr(self, attributes[i], value)
+        elif kwargs:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
 
-    @property
-    def x(self):
-        return self.__x
-
-    @property
-    def y(self):
-        return self.__y
-
-    # Setters
-    @width.setter
-    def width(self, value):
-        self.__width = value
-
-    @height.setter
-    def height(self, value):
-        self.__height = value
-
-    @x.setter
-    def x(self, value):
-        self.__x = value
-
-    @y.setter
-    def y(self, value):
-        self.__y = value
